@@ -10,12 +10,20 @@ def main():
     print(f"Screen width: {SCREEN_WIDTH}")
     print(f"Screen height: {SCREEN_HEIGHT}")
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+   
+    #clock for determining the fps of the game
+    dt = 0
+    clock = pygame.time.Clock()
 
+    #gameloop
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
         pygame.display.flip()
+        dt = clock.tick(60)/1000 #sets 60 fps and outputs it to dt converted to seconds
+
+        
 
 
 if __name__== "__main__":

@@ -3,6 +3,8 @@
 # throughout this file
 import pygame
 from constants import *
+from player import *
+from circleshape import *
 
 def main():
     pygame.init()
@@ -14,15 +16,22 @@ def main():
     #clock for determining the fps of the game
     dt = 0
     clock = pygame.time.Clock()
+    
+    #player
+    objPlayer = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT/2)
 
     #gameloop
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
+        
+        objPlayer.draw(screen)
+
         pygame.display.flip()
         dt = clock.tick(60)/1000 #sets 60 fps and outputs it to dt converted to seconds
-
+        print(f"{dt}", end="\r")
+ 
         
 
 

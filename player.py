@@ -31,6 +31,7 @@ class Player(CircleShape):
         
         if keys[pygame.K_a]:
             self.rotate(-dt)
+
         if keys[pygame.K_d]:
             self.rotate(dt) 
 
@@ -54,4 +55,4 @@ class Player(CircleShape):
         direction = pygame.Vector2(0, 1).rotate(self.rotation)
         new_shot.velocity = direction * PLAYER_SHOOT_SPEED
         self.shot_CD = PLAYER_SHOOT_COOLDOWN
-        #print("Shot created:", new_shot.position)  # For debugging
+        #print(" Shot created:", new_shot.position, end="\r")  # For debugging

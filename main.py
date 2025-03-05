@@ -60,7 +60,7 @@ def main():
                 if (shot.position.x < 0 or shot.position.x > SCREEN_WIDTH or shot.position.y < 0 or shot.position.y > SCREEN_HEIGHT):
                     shot.kill()
                 elif asteroid_object.collision(shot):
-                    asteroid_object.kill()
+                    asteroid_object.split()
                     shot.kill()
 
         for unit in drawable:
